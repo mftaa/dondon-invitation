@@ -1,0 +1,41 @@
+{
+  "single_hardcover_16x21": {
+    "name": "Single Hardcover + Amplop 16x21",
+    "category": "Hardcover",
+    "specs": ["Art Carton 210gr", "Cetak Bolak Balik", "Laminasi Doff/Glossy"],
+    "prices": [
+      {"qty": 100, "price": 17000},
+      {"qty": 200, "price": 14000},
+      {"qty": 300, "price": 11000},
+      {"qty": 400, "price": 9500},
+      {"qty": 500, "price": 8000},
+      {"qty": 600, "price": 7500},
+      {"qty": 700, "price": 7000},
+      {"qty": 800, "price": 6800},
+      {"qty": 900, "price": 6600},
+      {"qty": 1000, "price": 6500}
+    ]
+  },
+  "semi_hardcover_15x20": {
+    "name": "Semi Hardcover Lipat 2",
+    "category": "Semi Hardcover",
+    "specs": ["Ivory 260gr", "Cetak Full Color", "Tanpa Amplop"],
+    "prices": [
+      {"qty": 100, "price": 10000},
+      {"qty": 300, "price": 6000},
+      {"qty": 500, "price": 4500},
+      {"qty": 1000, "price": 3500}
+    ]
+  },
+  "softcover_15x20": {
+    "name": "Softcover Lipat 2",
+    "category": "Softcover",
+    "specs": ["BC Tik 200gr", "Ekonomis", "Minimalis"],
+    "prices": [
+      {"qty": 100, "price": 5000},
+      {"qty": 300, "price": 3000},
+      {"qty": 500, "price": 2000},
+      {"qty": 1000, "price": 1500}
+    ]
+  }
+}
