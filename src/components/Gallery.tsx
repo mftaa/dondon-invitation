@@ -1,36 +1,54 @@
+import Image from 'next/image';
+// Import gambar secara manual (Next.js butuh ini untuk optimasi folder src)
+import product1 from '@/assets/images/products/product1.jpeg';
+import product2 from '@/assets/images/products/product2.jpeg';
+import product3 from '@/assets/images/products/product3.jpeg';
+import product4 from '@/assets/images/products/product4.jpeg';
+import product5 from '@/assets/images/products/product5.jpeg';
+import product6 from '@/assets/images/products/product6.jpg';
+
 export default function Gallery() {
-  // Placeholder images - in production these would be real URLs
-  const images = [1, 2, 3, 4, 5, 6];
+  // Array objek agar kita bisa menambahkan caption sesuai model di pricelist
+  const galleryItems = [
+    { src: product1, alt: "Model Single Hardcover", category: "Hardcover" },
+    { src: product2, alt: "Model Boarding Pass", category: "Semi Hardcover" },
+    { src: product3, alt: "Model Softcover Lipat 3", category: "Softcover" },
+    { src: product4, alt: "Wedding Invitation Gold", category: "Premium" },
+    { src: product5, alt: "Custom Envelope Design", category: "Hardcover" },
+    { src: product6, alt: "Elegant Softcover Invitation", category: "Softcover" },
+  ];
 
   return (
-    <section className="py-20 bg-background">
+    <section className="py-20 bg-[#F4F4F4]"> {/* Menggunakan background light grey dari TechSpec */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl lg:text-4xl font-serif font-bold text-text-primary mb-4">
-            Galeri Produk
+          <h2 className="text-3xl lg:text-4xl font-serif font-bold text-[#2C3333] mb-4">
+            Galeri Produk Dondon Invitation
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Intip koleksi undangan terbaik yang pernah kami kerjakan.
+            Koleksi undangan mulai dari Hardcover, Semi Hardcover, hingga Softcover dengan bahan Art Carton berkualitas[cite: 6, 15, 255, 350].
           </p>
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-          {images.map((item, index) => (
-            <div 
-              key={index} 
+          {galleryItems.map((item, index) => (
+            <div
+              key={index}
               className={`relative rounded-xl overflow-hidden group shadow-md hover:shadow-xl transition-all duration-300 ${
-                index === 0 ? 'col-span-2 row-span-2 aspect-square md:aspect-auto' : 'aspect-square'
+                index === 0 ? 'col-span-2 row-span-2' : 'aspect-square'
               }`}
             >
-              <div className="absolute inset-0 bg-gray-300 animate-pulse group-hover:animate-none transition-colors">
-                {/* Placeholder content */}
-                <div className="w-full h-full flex items-center justify-center bg-gray-200 text-gray-400">
-                  <span className="text-sm">Image {item}</span>
-                </div>
-              </div>
-              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-end p-4">
-                <div className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-2 group-hover:translate-y-0">
-                  <p className="font-medium text-sm">Wedding Invitation</p>
+              <Image
+                src={item.src}
+                alt={item.alt}
+                fill
+                className="object-cover transition-transform duration-300 group-hover:scale-105"
+                placeholder="blur" // Menampilkan efek blur saat loading
+              />
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors duration-300 flex items-end p-4">
+                <div className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <p className="text-xs uppercase tracking-widest mb-1">{item.category}</p>
+                  <p className="font-serif font-medium">{item.alt}</p>
                 </div>
               </div>
             </div>
@@ -42,12 +60,10 @@ export default function Gallery() {
             href="https://instagram.com/dondon_invitation" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-primary font-medium hover:text-secondary transition-colors"
+            className="inline-flex items-center gap-2 text-[#5F7161] font-medium hover:text-[#E7AB79] transition-colors"
           >
-            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-            </svg>
-            Lihat lebih banyak di Instagram
+            {/* SVG Instagram tetap sama */}
+            Lihat Portfolio Lengkap di Instagram
           </a>
         </div>
       </div>

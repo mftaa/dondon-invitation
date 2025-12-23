@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export default function OrderSteps() {
   const steps = [
     {
@@ -14,6 +16,7 @@ export default function OrderSteps() {
       id: 2,
       title: "Isi Data & DP 1",
       description: "Mengisi form data pernikahan & pembayaran DP 50%.",
+      link: "/order-form",
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
@@ -66,7 +69,7 @@ export default function OrderSteps() {
 
         <div className="relative">
           {/* Connecting Line (Desktop) */}
-          <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-0.5 bg-gray-200 -translate-y-1/2 z-0 mx-16"></div>
+          <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-0.5 bg-gray-200 -translate-y-3 z-0 mx-16"></div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-4 relative z-10">
             {steps.map((step) => (
@@ -80,9 +83,16 @@ export default function OrderSteps() {
                 <h3 className="text-lg font-bold text-text-primary font-serif mb-2">
                   {step.title}
                 </h3>
-                <p className="text-sm text-gray-600 px-2 leading-relaxed">
+                <p className="text-sm text-gray-600 px-2 leading-relaxed mb-2">
                   {step.description}
                 </p>
+                
+                {step.link && (
+                    
+                  <Link href={step.link} className="text-sm font-medium text-primary hover:text-secondary hover:underline transition-colors">
+                    Klik untuk isi form
+                  </Link>
+                )}
               </div>
             ))}
           </div>

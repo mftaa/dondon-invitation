@@ -15,14 +15,18 @@ const products = Object.entries(pricelistData).map(([key, data]) => ({
   ...data,
 })) as ProductData[];
 
-const categories = ["All", "Hardcover", "Semi Hardcover", "Softcover"];
+const categories = ["Hardcover", "Semi Hardcover", "Softcover"];
+
+const categoryDescriptions: Record<string, string> = {
+  "Hardcover": "Undangan dengan sampul keras, tampilan eksklusif dan tahan lama.",
+  "Semi Hardcover": "Pilihan ekonomis dengan kualitas hampir setara hardcover.",
+  "Softcover": "Undangan ringan, fleksibel, dan tetap elegan.",
+};
 
 export default function ProductCatalog() {
-  const [activeCategory, setActiveCategory] = useState("All");
+  const [activeCategory, setActiveCategory] = useState(categories[0]);
 
-  const filteredProducts = activeCategory === "All" 
-    ? products 
-    : products.filter(product => product.category === activeCategory);
+  const filteredProducts = products.filter(product => product.category === activeCategory);
 
   return (
     <section id="katalog" className="py-20 bg-background">
@@ -31,10 +35,10 @@ export default function ProductCatalog() {
           <h2 className="text-3xl lg:text-4xl font-serif font-bold text-text-primary mb-4">
             Katalog Produk
           </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto mb-8">
+          <p className="text-gray-600 max-w-2xl mx-auto mb-4">
             Pilihan undangan eksklusif dengan berbagai model dan bahan berkualitas tinggi.
           </p>
-
+          
           {/* Filters */}
           <div className="flex flex-wrap justify-center gap-2">
             {categories.map((category) => (
@@ -49,10 +53,14 @@ export default function ProductCatalog() {
               >
                 {category}
               </button>
+              
             ))}
           </div>
         </div>
-
+        {/* Category Description */}
+          <p className="text-primary font-medium mb-8 min-h-[1.5em] text-center">
+            {categoryDescriptions[activeCategory]}
+          </p>
         {/* Product Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredProducts.map((product) => (

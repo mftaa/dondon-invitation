@@ -1,8 +1,9 @@
 import Link from 'next/link';
-
+import Image from 'next/image';
+import heroImage from '@/assets/images/products/product0.jpg';
 export default function Hero() {
   return (
-    <section className="relative bg-background py-20 lg:py-32 overflow-hidden">
+    <section className="relative bg-background py-18 lg:py-32 overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row items-center gap-12">
           
@@ -17,7 +18,8 @@ export default function Hero() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <Link 
-                href="#katalog" 
+                href="https://drive.google.com/file/d/18pR7pYLbwNTd4-4Hn_PnVmT-twY3-xV_/view?usp=sharing" 
+                target="_blank"
                 className="bg-primary text-white px-8 py-3 rounded-full font-medium text-lg hover:bg-opacity-90 transition-all shadow-lg hover:shadow-xl"
               >
                 Lihat Katalog
@@ -33,15 +35,19 @@ export default function Hero() {
             </div>
             
             <div className="mt-12 flex items-center justify-center lg:justify-start gap-8 text-gray-500 text-sm font-medium">
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-1">
+                <svg className="w-5 h-5 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                <span>Free Kartu Penukaran Souvenir</span>
+              </div>
+              <div className="flex items-center gap-1">
                 <svg className="w-5 h-5 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
                 <span>Free Plastik</span>
               </div>
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-1">
                 <svg className="w-5 h-5 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
                 <span>Free Label Nama</span>
               </div>
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-1">
                 <svg className="w-5 h-5 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
                 <span>Free E-Invitation</span>
               </div>
@@ -52,9 +58,16 @@ export default function Hero() {
           <div className="lg:w-1/2 relative">
             <div className="relative rounded-2xl overflow-hidden shadow-2xl aspect-[4/3] bg-gray-200">
                {/* Placeholder for Product Image */}
-               <div className="absolute inset-0 flex items-center justify-center bg-gray-300 text-gray-500">
+               <Image
+                 src={heroImage}
+                 alt="Hero Product Image"
+                 fill
+                 className="object-cover"
+                 placeholder="blur" // Menampilkan efek blur saat loading
+               />
+               {/* <div className="absolute inset-0 flex items-center justify-center bg-gray-300 text-gray-500">
                   <span className="text-xl font-medium">Foto Produk High-Res</span>
-               </div>
+               </div> */}
             </div>
             {/* Decorative Elements */}
             <div className="absolute -z-10 top-[-20px] right-[-20px] w-24 h-24 bg-secondary/20 rounded-full blur-xl"></div>

@@ -1,41 +1,188 @@
 {
   "single_hardcover_16x21": {
-    "name": "Single Hardcover + Amplop 16x21",
+    "name": "Single Hardcover + Amplop 16x21 cm",
     "category": "Hardcover",
-    "specs": ["Art Carton 210gr", "Cetak Bolak Balik", "Laminasi Doff/Glossy"],
+    "specs": [
+      "Bahan kertas art carton/ivory 210 gr/bc tik",
+      "Isi 1 lembar ketebalan hardcover (paling tebal)",
+      "Cetak bolak balik/dua muka",
+      "Amplop model landscape atau portrait",
+      "Desain sesuai request"
+    ],
     "prices": [
       {"qty": 100, "price": 17000},
-      {"qty": 200, "price": 14000},
-      {"qty": 300, "price": 11000},
-      {"qty": 400, "price": 9500},
+      {"qty": 200, "price": 12500},
+      {"qty": 300, "price": 9500},
       {"qty": 500, "price": 8000},
-      {"qty": 600, "price": 7500},
-      {"qty": 700, "price": 7000},
-      {"qty": 800, "price": 6800},
-      {"qty": 900, "price": 6600},
-      {"qty": 1000, "price": 6500}
+      {"qty": 750, "price": 7500},
+      {"qty": 1000, "price": 7300},
+      {"qty": 2000, "price": 6750}
     ]
   },
-  "semi_hardcover_15x20": {
-    "name": "Semi Hardcover Lipat 2",
+  "single_hardcover_25.5x18": {
+    "name": "Single Hardcover + Amplop 25.5x18 cm",
+    "category": "Hardcover",
+    "specs": [
+      "Bahan kertas art carton/ivory 210 gr/bc tik",
+      "Isi 1 lembar ketebalan hardcover",
+      "Cetak bolak balik/dua muka",
+      "Amplop model landscape",
+      "Desain sesuai request"
+    ],
+    "prices": [
+      {"qty": 300, "price": 13500},
+      {"qty": 500, "price": 10000},
+      {"qty": 750, "price": 9500},
+      {"qty": 1000, "price": 9300},
+      {"qty": 2000, "price": 8800}
+    ]
+  },
+  "single_hardcover_14x20": {
+    "name": "Single Hardcover + Amplop 14x20 cm",
+    "category": "Hardcover",
+    "specs": [
+      "Bahan kertas art carton/ivory 210 gr/bc tik",
+      "Isi 1 lembar ketebalan hardcover",
+      "Cetak bolak balik/dua muka",
+      "Amplop model landscape",
+      "Desain sesuai request"
+    ],
+    "prices": [
+      {"qty": 300, "price": 8000},
+      {"qty": 500, "price": 7200},
+      {"qty": 750, "price": 7000},
+      {"qty": 1000, "price": 6900},
+      {"qty": 2000, "price": 6300}
+    ]
+  },
+  "double_hardcover_15x21": {
+    "name": "Double Hardcover / Lipat 2 (15x21 atau 16x19 cm)",
+    "category": "Hardcover",
+    "specs": [
+      "Bahan art carton/ivory 210 gr/bc tik",
+      "Model hardcover bisa dilipat 2",
+      "Bisa model buka samping atau buka ke atas",
+      "Desain sesuai request"
+    ],
+    "prices": [
+      {"qty": 100, "price": 17500},
+      {"qty": 200, "price": 12500},
+      {"qty": 300, "price": 10500},
+      {"qty": 500, "price": 8500},
+      {"qty": 750, "price": 8000},
+      {"qty": 1000, "price": 7700},
+      {"qty": 2000, "price": 7300}
+    ]
+  },
+  "single_hardcover_lipat3": {
+    "name": "Single Hardcover Lipat 3 (16x19 cm)",
+    "category": "Hardcover",
+    "specs": [
+      "Bahan kertas art carton/ivory 210 gr/bc tik",
+      "Model lipat 3 (tengah tebal, kanan kiri tipis)",
+      "Bisa model buka samping atau buka ke atas",
+      "Desain sesuai request"
+    ],
+    "prices": [
+      {"qty": 200, "price": 11000},
+      {"qty": 300, "price": 8500},
+      {"qty": 500, "price": 7500},
+      {"qty": 750, "price": 7000},
+      {"qty": 1000, "price": 6800},
+      {"qty": 2000, "price": 6300}
+    ]
+  },
+  "single_semi_hardcover_16x21": {
+    "name": "Single Semi Hardcover + Amplop 16x21 cm",
     "category": "Semi Hardcover",
-    "specs": ["Ivory 260gr", "Cetak Full Color", "Tanpa Amplop"],
+    "specs": [
+      "Bahan kertas art carton/ivory 210 gr/bc tik",
+      "Isi 1 lembar ketebalan tipis kaku (seperti kartu ATM)",
+      "Cetak bolak balik/2 muka",
+      "Amplop model landscape atau portrait",
+      "Desain sesuai request"
+    ],
     "prices": [
-      {"qty": 100, "price": 10000},
-      {"qty": 300, "price": 6000},
-      {"qty": 500, "price": 4500},
-      {"qty": 1000, "price": 3500}
+      {"qty": 100, "price": 16000},
+      {"qty": 200, "price": 11500},
+      {"qty": 300, "price": 9000},
+      {"qty": 500, "price": 7500},
+      {"qty": 750, "price": 7000},
+      {"qty": 1000, "price": 6800},
+      {"qty": 2000, "price": 6500}
     ]
   },
-  "softcover_15x20": {
-    "name": "Softcover Lipat 2",
-    "category": "Softcover",
-    "specs": ["BC Tik 200gr", "Ekonomis", "Minimalis"],
+  "single_semi_hardcover_14x20": {
+    "name": "Single Semi Hardcover + Amplop 14x20 cm",
+    "category": "Semi Hardcover",
+    "specs": [
+      "Bahan kertas art carton/ivory 210 gr/bc tik",
+      "Isi 1 lembar ketebalan semi hardcover",
+      "Cetak bolak balik/dua muka",
+      "Amplop model landscape",
+      "Desain sesuai request"
+    ],
     "prices": [
-      {"qty": 100, "price": 5000},
-      {"qty": 300, "price": 3000},
-      {"qty": 500, "price": 2000},
-      {"qty": 1000, "price": 1500}
+      {"qty": 300, "price": 7500},
+      {"qty": 500, "price": 7000},
+      {"qty": 750, "price": 6200},
+      {"qty": 1000, "price": 6000},
+      {"qty": 2000, "price": 5500}
+    ]
+  },
+  "boarding_pass_22x9": {
+    "name": "Model Boarding Pass (22x9 cm)",
+    "category": "Semi Hardcover",
+    "specs": [
+      "Bahan kertas art carton/ivory 210 gr/bc tik",
+      "Single semi hardcover + amplop tarik samping",
+      "Sudah termasuk tali rami dan tag label nama",
+      "Desain sesuai request"
+    ],
+    "prices": [
+      {"qty": 100, "price": 13000},
+      {"qty": 200, "price": 10000},
+      {"qty": 300, "price": 7500},
+      {"qty": 500, "price": 7000},
+      {"qty": 750, "price": 6500},
+      {"qty": 1000, "price": 6000},
+      {"qty": 2000, "price": 5700}
+    ]
+  },
+  "softcover_lipat3_16x19": {
+    "name": "Softcover Lipat 3 (16x19 cm)",
+    "category": "Softcover",
+    "specs": [
+      "Bahan kertas art carton/ivory 260 gr/bc tik",
+      "Model softcover bisa dilipat 3",
+      "Bisa model buka samping atau buka ke atas",
+      "Desain sesuai request"
+    ],
+    "prices": [
+      {"qty": 200, "price": 7500},
+      {"qty": 300, "price": 6000},
+      {"qty": 500, "price": 4700},
+      {"qty": 750, "price": 4500},
+      {"qty": 1000, "price": 4300},
+      {"qty": 2000, "price": 4000}
+    ]
+  },
+  "softcover_lipat2_14x20": {
+    "name": "Softcover Lipat 2 (14x20 cm)",
+    "category": "Softcover",
+    "specs": [
+      "Bahan kertas art carton/ivory 260 gr/bc tik",
+      "Model softcover lipat 2",
+      "Bisa model buka samping atau buka ke atas",
+      "Desain sesuai request"
+    ],
+    "prices": [
+      {"qty": 200, "price": 7000},
+      {"qty": 300, "price": 5500},
+      {"qty": 500, "price": 4300},
+      {"qty": 750, "price": 4000},
+      {"qty": 1000, "price": 3700},
+      {"qty": 2000, "price": 3500}
     ]
   }
 }

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useMemo } from 'react';
+import Link from 'next/link';
 import pricelistData from '../data/pricelist.json';
 
 type PriceTier = {
@@ -145,14 +146,19 @@ export default function PriceCalculator() {
               </div>
 
               <div className="w-full pt-4">
-                 <a 
-                  href={`https://wa.me/6287777479033?text=Halo%20Dondon,%20saya%20tertarik%20dengan%20${product.name}%20sejumlah%20${qty}%20pcs`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block w-full bg-primary text-white py-3 rounded-lg font-medium hover:bg-opacity-90 transition-colors shadow-md"
+                 <Link 
+                  href={{
+                    pathname: '/order-form',
+                    query: {
+                      model: product.name,
+                      qty: qty,
+                      price: estimatedPrice.total
+                    }
+                  }}
+                  className="block w-full bg-primary text-white py-3 rounded-lg font-medium hover:bg-opacity-90 transition-colors shadow-md text-center"
                 >
                   Pesan Sekarang
-                </a>
+                </Link>
               </div>
             </div>
 

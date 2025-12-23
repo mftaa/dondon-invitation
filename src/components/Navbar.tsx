@@ -2,9 +2,20 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const router = useRouter();
+
+  const handleNav = (hash: string) => {
+    router.replace('/' + hash);
+    setTimeout(() => {
+      const el = document.querySelector(hash);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }, 0);
+    setIsOpen(false);
+  };
 
   return (
     <nav className="bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-sm border-b border-gray-100">
@@ -19,18 +30,18 @@ export default function Navbar() {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-8">
-            <Link href="#katalog" className="text-text-primary hover:text-primary transition-colors font-medium">
+            <button onClick={() => handleNav('#katalog')} className="text-text-primary hover:text-primary transition-colors font-medium bg-transparent border-none cursor-pointer p-0">
               Katalog
-            </Link>
-            <Link href="#calculator" className="text-text-primary hover:text-primary transition-colors font-medium">
+            </button>
+            <button onClick={() => handleNav('#calculator')} className="text-text-primary hover:text-primary transition-colors font-medium bg-transparent border-none cursor-pointer p-0">
               Kalkulator Harga
-            </Link>
-            <Link href="#cara-pesan" className="text-text-primary hover:text-primary transition-colors font-medium">
+            </button>
+            <button onClick={() => handleNav('#cara-pesan')} className="text-text-primary hover:text-primary transition-colors font-medium bg-transparent border-none cursor-pointer p-0">
               Cara Pesan
-            </Link>
-            <Link href="#lokasi" className="text-text-primary hover:text-primary transition-colors font-medium">
+            </button>
+            <button onClick={() => handleNav('#lokasi')} className="text-text-primary hover:text-primary transition-colors font-medium bg-transparent border-none cursor-pointer p-0">
               Lokasi
-            </Link>
+            </button>
           </div>
 
           {/* CTA Button */}
@@ -67,27 +78,24 @@ export default function Navbar() {
       {isOpen && (
         <div className="md:hidden bg-white border-b border-gray-100">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <Link 
-              href="#katalog" 
-              className="block px-3 py-2 rounded-md text-base font-medium text-text-primary hover:bg-gray-50"
-              onClick={() => setIsOpen(false)}
+            <button 
+              onClick={() => handleNav('#katalog')}
+              className="block px-3 py-2 rounded-md text-base font-medium text-text-primary hover:bg-gray-50 w-full text-left"
             >
               Katalog
-            </Link>
-            <Link 
-              href="#calculator" 
-              className="block px-3 py-2 rounded-md text-base font-medium text-text-primary hover:bg-gray-50"
-              onClick={() => setIsOpen(false)}
+            </button>
+            <button 
+              onClick={() => handleNav('#calculator')}
+              className="block px-3 py-2 rounded-md text-base font-medium text-text-primary hover:bg-gray-50 w-full text-left"
             >
               Kalkulator Harga
-            </Link>
-            <Link 
-              href="#cara-pesan" 
-              className="block px-3 py-2 rounded-md text-base font-medium text-text-primary hover:bg-gray-50"
-              onClick={() => setIsOpen(false)}
+            </button>
+            <button 
+              onClick={() => handleNav('#cara-pesan')}
+              className="block px-3 py-2 rounded-md text-base font-medium text-text-primary hover:bg-gray-50 w-full text-left"
             >
               Cara Pesan
-            </Link>
+            </button>
             <a 
               href="https://wa.me/6287777479033"
               className="block w-full text-center mt-4 bg-primary text-white px-5 py-3 rounded-lg font-medium"
