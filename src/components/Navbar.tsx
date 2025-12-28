@@ -1,8 +1,10 @@
 "use client";
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import Logo from '@/assets/images/logo.png';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,7 +25,13 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
-            <Link href="/" className="font-serif text-2xl font-bold text-primary">
+            <Image
+              src={Logo}
+              alt="Dondon Invitation Logo"
+              width={40}
+              height={40}
+            />
+            <Link href="/" className="font-serif text-2xl font-bold text-primary ml-2">
               Dondon Invitation
             </Link>
           </div>
