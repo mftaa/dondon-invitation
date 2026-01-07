@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import pricelistData from '../data/pricelist.json';
+import Image from 'next/image';
 
 type ProductData = {
   key: string;
@@ -14,6 +15,16 @@ const products = Object.entries(pricelistData).map(([key, data]) => ({
   key,
   ...data,
 })) as ProductData[];
+
+import hardcover from '@/assets/images/catalogs/hardcover.jpeg';
+import semihard from '@/assets/images/catalogs/semihard.jpeg';
+import softcover from '@/assets/images/catalogs/softcover.jpeg';
+
+const categoryImages: Record<string, any> = {
+  "Hardcover": hardcover,
+  "Semi Hardcover": semihard,
+  "Softcover": softcover,
+};
 
 const categories = ["Hardcover", "Semi Hardcover", "Softcover"];
 
@@ -38,41 +49,44 @@ export default function ProductCatalog() {
           <p className="text-gray-600 max-w-2xl mx-auto mb-4">
             Pilihan undangan eksklusif dengan berbagai model dan bahan berkualitas tinggi.
           </p>
-          
+
           {/* Filters */}
           <div className="flex flex-wrap justify-center gap-2">
             {categories.map((category) => (
               <button
                 key={category}
                 onClick={() => setActiveCategory(category)}
-                className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
-                  activeCategory === category
-                    ? "bg-primary text-white shadow-md"
-                    : "bg-white text-gray-600 hover:bg-gray-100 border border-transparent hover:border-gray-200"
-                }`}
+                className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 ${activeCategory === category
+                  ? "bg-primary text-white shadow-md"
+                  : "bg-white text-gray-600 hover:bg-gray-100 border border-transparent hover:border-gray-200"
+                  }`}
               >
                 {category}
               </button>
-              
+
             ))}
           </div>
         </div>
         {/* Category Description */}
-          <p className="text-primary font-medium mb-8 min-h-[1.5em] text-center">
-            {categoryDescriptions[activeCategory]}
-          </p>
+        <p className="text-primary font-medium mb-8 min-h-[1.5em] text-center">
+          {categoryDescriptions[activeCategory]}
+        </p>
         {/* Product Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredProducts.map((product) => (
-            <div 
-              key={product.key} 
+            <div
+              key={product.key}
               className="group bg-white rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col h-full"
             >
               {/* Image Placeholder */}
               <div className="aspect-[4/3] bg-gray-200 relative overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-center bg-gray-300 text-gray-500">
-                  <span className="font-medium">Foto: {product.name}</span>
-                </div>
+                <Image
+                  src={categoryImages[product.category]}
+                  alt={product.name}
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  className="object-cover group-hover:scale-110 transition-transform duration-500"
+                />
                 {/* Overlay on hover */}
                 <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
@@ -96,7 +110,7 @@ export default function ProductCatalog() {
                     ))}
                   </div>
                 </div>
-                
+
                 <div className="mt-4 pt-4 border-t border-gray-100 flex items-center justify-between text-sm">
                   <span className="text-gray-500">Bonus Lengkap</span>
                   <span className="font-medium text-primary">Lihat Detail →</span>
@@ -107,9 +121,9 @@ export default function ProductCatalog() {
         </div>
 
         {filteredProducts.length === 0 && (
-            <div className="text-center py-12 text-gray-500">
-                Tidak ada produk ditemukan untuk kategori ini.
-            </div>
+          <div className="text-center py-12 text-gray-500">
+            Tidak ada produk ditemukan untuk kategori ini.
+          </div>
         )}
       </div>
     </section>
