@@ -144,12 +144,12 @@ export default function ProductCatalogSideLayout() {
                   </div>
 
                   {/* Bagian Bawah Kartu */}
-                  <div className="mt-auto pt-4 border-t border-gray-50 flex items-center justify-between">
+                  {/* <div className="mt-auto pt-4 border-t border-gray-50 flex items-center justify-between">
                     <span className="text-[10px] text-gray-400 font-medium italic">Bonus Lengkap</span>
                     <button className="text-xs font-bold text-primary hover:underline">
                       Detail →
                     </button>
-                  </div>
+                  </div> */}
                 </div>
               ))
             ) : (

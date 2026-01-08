@@ -45,18 +45,18 @@ export default function TipsAndTrick() {
                 <p className="text-sm text-gray-600 leading-relaxed mb-4">
                   {tip.content}
                 </p>
-                <a href="#" className="text-sm font-medium text-text-primary hover:text-primary inline-flex items-center">
+                {/* <a href="#" className="text-sm font-medium text-text-primary hover:text-primary inline-flex items-center">
                   Baca Selengkapnya
-                </a>
+                </a> */}
               </div>
             </div>
           ))}
         </div>
-        
+
         <div className="mt-8 text-center md:hidden">
-            <button className="inline-flex items-center text-primary font-medium hover:text-secondary transition-colors">
-                Baca Artikel Lainnya <span className="ml-2">→</span>
-            </button>
+          <button className="inline-flex items-center text-primary font-medium hover:text-secondary transition-colors">
+            Baca Artikel Lainnya <span className="ml-2">→</span>
+          </button>
         </div>
       </div>
     </section>
